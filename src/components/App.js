@@ -139,7 +139,7 @@ function App() {
           </fieldset>
 
           <section className='ask-info'>
-            <p className='subtitle'>Cuéntanos sobre la autora</p>
+            <p className='ask-info__subtitle'>Cuéntanos sobre la autora</p>
             <hr className='line' />
           </section>
 
