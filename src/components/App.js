@@ -4,19 +4,46 @@ import "../styles/App.scss";
 import cover from "../images/cover.jpeg";
 import user from "../images/user.jpeg";
 import logoAdalab from "../images/logo-adalab.png";
+import { useState } from "react";
 
 function App() {
-  /* VARIABLES Y DATOS */
+  const [name, setName] = useState("");
+  const [slogan, setSlogan] = useState("");
+  const [repo, setRepo] = useState("");
+  const [demo, setDemo] = useState("");
+  const [tec, setTec] = useState("");
+  const [desc, setDesc] = useState("");
+  const [nameUser, setNameUser] = useState("");
+  const [jobUser, setJobUser] = useState("");
   /* EFECTOS */
   /* FUNCIONES HANDLER */
+  const handleInput = (ev) => {
+    const inputValue = ev.target.value;
+    const inputName = ev.target.name;
+    if (inputName === "name") {
+      setName(inputValue);
+    } else if (inputName === "slogan") {
+      setSlogan(inputValue);
+    } else if (inputName === "repo") {
+      setRepo(inputValue);
+    } else if (inputName === "demo") {
+      setDemo(inputValue);
+    } else if (inputName === "technologies") {
+      setTec(inputValue);
+    } else if (inputName === "desc") {
+      setDesc(inputValue);
+    } else if (inputName === "autor") {
+      setNameUser(inputValue);
+    } else setJobUser(inputValue);
+  };
   /* FUNCIONES Y VARIABLES AUXILIARES PARA PINTAR EL HTML */
   /* HTML */
   return (
     <div className='container'>
       <header className='header'>
-        <i class='fa-solid fa-laptop-code icon'></i>
-        <p class='text'>Proyectos Molones</p>
-        <img class='logo--adalab' src={logoAdalab} alt='Imagen de Adalab' />
+        <i className='fa-solid fa-laptop-code icon'></i>
+        <p className='text'>Proyectos Molones</p>
+        <img className='logo--adalab' src={logoAdalab} alt='Imagen de Adalab' />
       </header>
       <main className='main'>
         <section className='preview'>
@@ -27,23 +54,21 @@ function App() {
               <p className='subtitle'>Personal Project Card</p>
               <hr className='line' />
 
-              <h2 className='title'>Elegant Workspace</h2>
-              <p className='slogan'>Diseños Exclusivos</p>
+              <h2 className='title'>{name || "Elegant workspace"}</h2>
+              <p className='slogan'>{slogan || "Diseños Exclusivos"}</p>
               <p className='desc'>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Libero, delectus? Voluptates at hic aliquam porro ad suscipit
-                harum laboriosam saepe earum doloribus aperiam, ullam culpa
-                accusantium placeat odit corrupti ipsum!
+                {desc ||
+                  "Lorem, ipsum dolor sit amet consectetur adipisicing elit Libero, delectus? Voluptates at hic aliquam porro ad suscip harum laboriosam saepe earum doloribus aperiam, ullam culpa accusantium placeat odit corrupti ipsum!"}
               </p>
               <section className='technologies'>
-                <p className='text'>React JS, MongoDB</p>
+                <p className='text'>{tec || "React JS, MongoDB"}</p>
               </section>
             </section>
 
             <section className='info-autor'>
               <img className='image' src={user} alt='' />
-              <p className='job'>Full Stack Developer</p>
-              <p className='name'>Emmelie Björklund</p>
+              <p className='job'>{jobUser || "Full Stack Developer"}</p>
+              <p className='name'>{nameUser || "Emmelie Björklund"}</p>
             </section>
           </section>
         </section>
@@ -63,6 +88,8 @@ function App() {
               placeholder='Nombre del proyecto'
               name='name'
               id='name'
+              value={name}
+              onChange={handleInput}
             />
             <input
               className='input'
@@ -70,6 +97,8 @@ function App() {
               name='slogan'
               id='slogan'
               placeholder='Slogan'
+              value={slogan}
+              onChange={handleInput}
             />
             <input
               className='input'
@@ -77,6 +106,8 @@ function App() {
               name='repo'
               id='repo'
               placeholder='Repo'
+              value={repo}
+              onChange={handleInput}
             />
             <input
               className='input'
@@ -84,6 +115,8 @@ function App() {
               placeholder='Demo'
               name='demo'
               id='demo'
+              value={demo}
+              onChange={handleInput}
             />
             <input
               className='input'
@@ -91,6 +124,8 @@ function App() {
               placeholder='Tecnologías'
               name='technologies'
               id='technologies'
+              value={tec}
+              onChange={handleInput}
             />
             <textarea
               className='textarea'
@@ -98,6 +133,8 @@ function App() {
               placeholder='Descripción'
               name='desc'
               id='desc'
+              value={desc}
+              onChange={handleInput}
             ></textarea>
           </fieldset>
 
@@ -113,6 +150,8 @@ function App() {
               placeholder='Nombre'
               name='autor'
               id='autor'
+              value={nameUser}
+              onChange={handleInput}
             />
             <input
               className='input'
@@ -120,6 +159,8 @@ function App() {
               placeholder='Trabajo'
               name='job'
               id='job'
+              value={jobUser}
+              onChange={handleInput}
             />
           </fieldset>
 
