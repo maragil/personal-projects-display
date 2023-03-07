@@ -19,20 +19,19 @@
     height: 33px;
     font-size: 32px;
   }
-}
-.header .text {
-  color: $white-50;
-  width: 80%;
-  text-align: left;
-  font-size: 14px;
-  font-family: $font-poppins;
-  font-weight: 300;
-  padding: 5px;
-}
-
-.logo--adalab {
-  width: 123px;
-  height: 46px;
+  &__text {
+    color: $white-50;
+    width: 80%;
+    text-align: left;
+    font-size: 14px;
+    font-family: $font-poppins;
+    font-weight: 300;
+    padding: 5px;
+  }
+  &__logo--adalab {
+    width: 123px;
+    height: 46px;
+  }
 }
 
 .image {
