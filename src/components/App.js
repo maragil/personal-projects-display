@@ -81,7 +81,7 @@ function App() {
           <h2 className='form__title'>Información</h2>
 
           <section className='ask-info'>
-            <p className='subtitle'>Cuéntanos sobre el proyecto</p>
+            <p className='ask-info__subtitle'>Cuéntanos sobre el proyecto</p>
             <hr className='line' />
           </section>
 
