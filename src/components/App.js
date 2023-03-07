@@ -41,7 +41,7 @@ function App() {
   return (
     <div className='container'>
       <header className='header'>
-        <i className='fa-solid fa-laptop-code icon'></i>
+        <i className='fa-solid fa-laptop-code header__icon'></i>
         <p className='text'>Proyectos Molones</p>
         <img className='logo--adalab' src={logoAdalab} alt='Imagen de Adalab' />
       </header>
@@ -62,11 +62,15 @@ function App() {
               </p>
               <section className='technologies'>
                 <p className='text'>{tec || "React JS, MongoDB"}</p>
+                <div class='icons'>
+                  <i class='fas fa-globe icon'></i>
+                  <i class='fab fa-github icon'></i>
+                </div>
               </section>
             </section>
 
             <section className='info-autor'>
-              <img className='image' src={user} alt='' />
+              <img className='image-autor' src={user} alt='' />
               <p className='job'>{jobUser || "Full Stack Developer"}</p>
               <p className='name'>{nameUser || "Emmelie Björklund"}</p>
             </section>

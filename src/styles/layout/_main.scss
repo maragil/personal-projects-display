@@ -41,13 +41,13 @@
     background-color: transparent;
   }
 }
-.ask-info{
-    &__subtitle{
-        font-family: $font-montserrat;
-        font-size: 18px;
-        color: $white;
-        text-align: center;
-    }
+.ask-info {
+  &__subtitle {
+    font-family: $font-montserrat;
+    font-size: 18px;
+    color: $white;
+    text-align: center;
+  }
 }
 .autor {
   margin: 13px 24px 0 28px;
@@ -69,8 +69,8 @@
 }
 
 .buttons-img {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
   &__btn {
     font-size: 1rem;
     width: 112px;
