@@ -41,7 +41,7 @@ function App() {
   return (
     <div className='container'>
       <header className='header'>
-        <i className='fa-solid fa-laptop-code icon'></i>
+        <i className='fa-solid fa-laptop-code header__icon'></i>
         <p className='text'>Proyectos Molones</p>
         <img className='logo--adalab' src={logoAdalab} alt='Imagen de Adalab' />
       </header>
@@ -62,11 +62,15 @@ function App() {
               </p>
               <section className='technologies'>
                 <p className='text'>{tec || "React JS, MongoDB"}</p>
+                <div class='icons'>
+                  <i class='fas fa-globe icon'></i>
+                  <i class='fab fa-github icon'></i>
+                </div>
               </section>
             </section>
 
             <section className='info-autor'>
-              <img className='image' src={user} alt='' />
+              <img className='image-autor' src={user} alt='' />
               <p className='job'>{jobUser || "Full Stack Developer"}</p>
               <p className='name'>{nameUser || "Emmelie Björklund"}</p>
             </section>
@@ -74,7 +78,7 @@ function App() {
         </section>
 
         <section className='form'>
-          <h2 className='title'>Información</h2>
+          <h2 className='form__title'>Información</h2>
 
           <section className='ask-info'>
             <p className='subtitle'>Cuéntanos sobre el proyecto</p>
@@ -83,7 +87,7 @@ function App() {
 
           <fieldset className='project'>
             <input
-              className='input'
+              className='project__input'
               type='text'
               placeholder='Nombre del proyecto'
               name='name'
@@ -92,7 +96,7 @@ function App() {
               onChange={handleInput}
             />
             <input
-              className='input'
+              className='project__input'
               type='text'
               name='slogan'
               id='slogan'
@@ -101,7 +105,7 @@ function App() {
               onChange={handleInput}
             />
             <input
-              className='input'
+              className='project__input'
               type='text'
               name='repo'
               id='repo'
@@ -110,7 +114,7 @@ function App() {
               onChange={handleInput}
             />
             <input
-              className='input'
+              className='project__input'
               type='text'
               placeholder='Demo'
               name='demo'
@@ -119,7 +123,7 @@ function App() {
               onChange={handleInput}
             />
             <input
-              className='input'
+              className='project__input'
               type='text'
               placeholder='Tecnologías'
               name='technologies'
@@ -128,7 +132,7 @@ function App() {
               onChange={handleInput}
             />
             <textarea
-              className='textarea'
+              className='project__textarea'
               type='text'
               placeholder='Descripción'
               name='desc'
@@ -139,13 +143,13 @@ function App() {
           </fieldset>
 
           <section className='ask-info'>
-            <p className='subtitle'>Cuéntanos sobre la autora</p>
+            <p className='ask-info__subtitle'>Cuéntanos sobre la autora</p>
             <hr className='line' />
           </section>
 
           <fieldset className='autor'>
             <input
-              className='input'
+              className='autor__input'
               type='text'
               placeholder='Nombre'
               name='autor'
@@ -154,7 +158,7 @@ function App() {
               onChange={handleInput}
             />
             <input
-              className='input'
+              className='autor__input'
               type='text'
               placeholder='Trabajo'
               name='job'
@@ -165,11 +169,11 @@ function App() {
           </fieldset>
 
           <section className='buttons-img'>
-            <button className='btn'>Subir foto de proyecto</button>
-            <button className='btn'>Subir foto de autora</button>
+            <button className='buttons-img__btn'>Subir foto de proyecto</button>
+            <button className='buttons-img__btn'>Subir foto de autora</button>
           </section>
           <section className='buttons-img'>
-            <button className='btn-large'>Crear Tarjeta</button>
+            <button className='buttons-img__btn'>Crear Tarjeta</button>
           </section>
 
           <section className='card'>

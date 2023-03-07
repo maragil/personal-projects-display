@@ -1,0 +1,98 @@
+.form {
+  height: 68rem;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  border: solid 1px rgba(0, 0, 0, 0);
+  background-image: radial-gradient(circle at 50% 50%, #403a5f, #211e2e 92%);
+  margin: 0 38px;
+
+  &__title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    font-family: $font-montserrat;
+  }
+}
+
+.project {
+  margin: 13px 24px 0 28px;
+  &__input {
+    width: 100%;
+    border-radius: 40px;
+    border: solid 2px white;
+    background-color: none;
+    height: 32.3px;
+    margin-bottom: 7.2px;
+    background-color: transparent;
+  }
+  ::placeholder {
+    color: white;
+    font-size: 10px;
+    padding-left: 15.8px;
+  }
+
+  &__textarea {
+    width: 100%;
+    border-radius: 40px;
+    border: solid 2px white;
+    background-color: none;
+    height: 83.3px;
+    margin-bottom: 7.2px;
+    background-color: transparent;
+  }
+}
+.ask-info {
+  &__subtitle {
+    font-family: $font-montserrat;
+    font-size: 18px;
+    color: $white;
+    text-align: center;
+  }
+}
+.autor {
+  margin: 13px 24px 0 28px;
+  &__input {
+    font-size: 1rem;
+    width: 100%;
+    border-radius: 40px;
+    border: solid 2px white;
+    background-color: none;
+    height: 32.3px;
+    margin-bottom: 7.2px;
+    background-color: transparent;
+  }
+  ::placeholder {
+    color: white;
+    font-size: 10px;
+    padding-left: 15.8px;
+  }
+}
+
+.buttons-img {
+  display: flex;
+  justify-content: center;
+  &__btn {
+    font-size: 1rem;
+    width: 112px;
+    margin-top: 20px;
+    margin-right: 15px;
+    color: white;
+    text-align: center;
+    border: none;
+    height: 34px;
+    background: linear-gradient(90deg, #8176af -1.57%, #c0b7e8 98.43%);
+    border-radius: 40px;
+  }
+}
+
+.line {
+  width: 100%;
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.75),
+    rgba(255, 255, 255, 0)
+  );
+}
