@@ -9,9 +9,13 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
-  height: 12vh;
+  padding-bottom: 20px;
+  height: 8vh;
   background-color: $dark;
+  @media (min-width: 768px) {
+    padding-bottom: 0px;
+    height: 5vh;
+  }
 
   &__icon {
     color: $white;

@@ -15,6 +15,24 @@ function App() {
   const [desc, setDesc] = useState("");
   const [nameUser, setNameUser] = useState("");
   const [jobUser, setJobUser] = useState("");
+
+  function isValidText(text){
+  return /^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]*$/.test(text);
+  }
+  function isValidJob(text){
+  return /^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]*$/.test(text);
+  }
+  // function isValidMail(text){
+  // // return /^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$/.test(text);
+  
+  // return /^((https?|ftp|file):\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/.test(text);
+  // const urlRegex = `^(http:\\/\\/www\\.|https:\\/\\/www\\.|http:\\/\\/|https:\\/\\/)?[a-zA-Z0-9]+([\\-\\.]{1}[a-zA-Z0-9]+)*\\.[a-zA-Z]{2,5}(:[0-9]{1,5})?(\\/\\/.*)?$`;
+
+  // }
+  const isValidRepo = (webpage) => {
+  const urlRegex = "^(http:\\/\\/www\\.|https:\\/\\/www\\.|http:\\/\\/|https:\\/\\/)?[a-zA-Z0-9]+([\\-\\.]{1}[a-zA-Z0-9]+)*\\.[a-zA-Z]{2,5}(:[0-9]{1,5})?(\\/\\/.*)?$";
+  return RegExp(urlRegex).test(webpage);
+};
   /* EFECTOS */
   /* FUNCIONES HANDLER */
   const handleInput = (ev) => {
@@ -26,13 +44,16 @@ function App() {
       setSlogan(inputValue);
     } else if (inputName === "repo") {
       setRepo(inputValue);
-    } else if (inputName === "demo") {
-      setDemo(inputValue);
+    } else if (inputName === "demo") 
+    {if (isValidRepo(inputValue)){
+      setDemo(inputValue);}
+      console.log(isValidRepo(inputValue));
     } else if (inputName === "technologies") {
       setTec(inputValue);
     } else if (inputName === "desc") {
       setDesc(inputValue);
-    } else if (inputName === "autor") {
+    } else if (inputName === "autor") 
+    { if (isValidText(inputValue))
       setNameUser(inputValue);
     } else setJobUser(inputValue);
   };
@@ -54,7 +75,7 @@ function App() {
               <p className='subtitle'>Personal Project Card</p>
               <hr className='line' />
 
-              <h2 className='title'>{name || "Elegant workspace"}</h2>
+              <h2 className='title-project'>{name || "Elegant workspace"}</h2>
               <p className='slogan'>{slogan || "Diseños Exclusivos"}</p>
               <p className='desc'>
                 {desc ||
@@ -62,9 +83,9 @@ function App() {
               </p>
               <section className='technologies'>
                 <p className='text'>{tec || "React JS, MongoDB"}</p>
-                <div class='icons'>
-                  <i class='fas fa-globe icon'></i>
-                  <i class='fab fa-github icon'></i>
+                <div className='icons'>
+                  <i className='fas fa-globe icon'></i>
+                  <i className='fab fa-github icon'></i>
                 </div>
               </section>
             </section>

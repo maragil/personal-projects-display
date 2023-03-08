@@ -1,15 +1,10 @@
 .main {
   display: flex;
   flex-direction: column;
-  padding-top: 30px;
   @media (min-width: 768px) {
-    flex-direction: row;
-  }
-}
-
-.main .preview {
-  @media (min-width: 768px) {
-    width: 60%;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 20px;
   }
 }
 
@@ -51,6 +46,7 @@
     font-weight: 600;
     color: #909090;
     font-size: 10px;
+    padding-bottom: 5px;
     @media all and (min-width: 768px) {
       font-size: 16px;
     }
@@ -91,6 +87,7 @@
   }
   .title-project {
     font-family: "Poppins", sans-serif;
+    padding-bottom: 5px;
     font-size: 14px;
     font-weight: 600;
     color: black;
@@ -103,6 +100,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 8px;
     margin-bottom: 10px;
+    line-height: 1.76;
     @media all and (min-width: 768px) {
       font-size: 10px;
     }
@@ -173,4 +171,5 @@
   color: white;
   text-align: center;
   padding: 20px;
+  display: none;
 }
