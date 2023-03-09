@@ -16,6 +16,17 @@ function App() {
   const [nameUser, setNameUser] = useState("");
   const [jobUser, setJobUser] = useState("");
 
+  const [data, setData] = useState ({
+    name: '',
+    slogan: '',
+    repo: '',
+    demo: '',
+    tec: '',
+    desc: '',
+    nameUser: '',
+    jobUser: '',
+  })
+
   function isValidText(text){
   return /^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]*$/.test(text);
   }
@@ -24,7 +35,7 @@ function App() {
   }
   // function isValidMail(text){
   // // return /^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$/.test(text);
-  
+
   // return /^((https?|ftp|file):\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/.test(text);
   // const urlRegex = `^(http:\\/\\/www\\.|https:\\/\\/www\\.|http:\\/\\/|https:\\/\\/)?[a-zA-Z0-9]+([\\-\\.]{1}[a-zA-Z0-9]+)*\\.[a-zA-Z]{2,5}(:[0-9]{1,5})?(\\/\\/.*)?$`;
 
@@ -33,30 +44,49 @@ function App() {
   const urlRegex = "^(http:\\/\\/www\\.|https:\\/\\/www\\.|http:\\/\\/|https:\\/\\/)?[a-zA-Z0-9]+([\\-\\.]{1}[a-zA-Z0-9]+)*\\.[a-zA-Z]{2,5}(:[0-9]{1,5})?(\\/\\/.*)?$";
   return RegExp(urlRegex).test(webpage);
 };
+
   /* EFECTOS */
   /* FUNCIONES HANDLER */
   const handleInput = (ev) => {
     const inputValue = ev.target.value;
     const inputName = ev.target.name;
     if (inputName === "name") {
-      setName(inputValue);
+      setData({
+        ...data,name:inputValue
+      });
+      console.log(data);
     } else if (inputName === "slogan") {
-      setSlogan(inputValue);
+      setData({
+        ...data,slogan:inputValue
+      });
     } else if (inputName === "repo") {
-      setRepo(inputValue);
-    } else if (inputName === "demo") 
+      setData({
+        ...data,repo:inputValue
+      });
+    } else if (inputName === "demo")
     {if (isValidRepo(inputValue)){
-      setDemo(inputValue);}
+      setData({
+        ...data,demo:inputValue
+      });
       console.log(isValidRepo(inputValue));
     } else if (inputName === "technologies") {
-      setTec(inputValue);
+      setData({
+        ...data,tec:inputValue
+      });
     } else if (inputName === "desc") {
-      setDesc(inputValue);
-    } else if (inputName === "autor") 
+      setData({
+        ...data,desc:inputValue
+      });
+    } else if (inputName === "autor")
     { if (isValidText(inputValue))
-      setNameUser(inputValue);
-    } else setJobUser(inputValue);
+      setData({
+        ...data,nameUser:inputValue
+      });
+    } else  setData({
+      ...data,jobUser:inputValue
+    });;
   };
+}
   /* FUNCIONES Y VARIABLES AUXILIARES PARA PINTAR EL HTML */
   /* HTML */
   return (
@@ -75,14 +105,14 @@ function App() {
               <p className='subtitle'>Personal Project Card</p>
               <hr className='line' />
 
-              <h2 className='title-project'>{name || "Elegant workspace"}</h2>
-              <p className='slogan'>{slogan || "Diseños Exclusivos"}</p>
+              <h2 className='title-project'>{data.name || "Elegant workspace"}</h2>
+              <p className='slogan'>{data.slogan || "Diseños Exclusivos"}</p>
               <p className='desc'>
-                {desc ||
+                {data.desc ||
                   "Lorem, ipsum dolor sit amet consectetur adipisicing elit Libero, delectus? Voluptates at hic aliquam porro ad suscip harum laboriosam saepe earum doloribus aperiam, ullam culpa accusantium placeat odit corrupti ipsum!"}
               </p>
               <section className='technologies'>
-                <p className='text'>{tec || "React JS, MongoDB"}</p>
+                <p className='text'>{data.tec || "React JS, MongoDB"}</p>
                 <div className='icons'>
                   <i className='fas fa-globe icon'></i>
                   <i className='fab fa-github icon'></i>
@@ -92,8 +122,8 @@ function App() {
 
             <section className='info-autor'>
               <img className='image-autor' src={user} alt='' />
-              <p className='job'>{jobUser || "Full Stack Developer"}</p>
-              <p className='name'>{nameUser || "Emmelie Björklund"}</p>
+              <p className='job'>{data.jobUser || "Full Stack Developer"}</p>
+              <p className='name'>{data.nameUser || "Emmelie Björklund"}</p>
             </section>
           </section>
         </section>
@@ -113,7 +143,7 @@ function App() {
               placeholder='Nombre del proyecto'
               name='name'
               id='name'
-              value={name}
+              value={data.name}
               onChange={handleInput}
             />
             <input
@@ -122,7 +152,7 @@ function App() {
               name='slogan'
               id='slogan'
               placeholder='Slogan'
-              value={slogan}
+              value={data.slogan}
               onChange={handleInput}
             />
             <input
@@ -131,7 +161,7 @@ function App() {
               name='repo'
               id='repo'
               placeholder='Repo'
-              value={repo}
+              value={data.repo}
               onChange={handleInput}
             />
             <input
@@ -140,7 +170,7 @@ function App() {
               placeholder='Demo'
               name='demo'
               id='demo'
-              value={demo}
+              value={data.demo}
               onChange={handleInput}
             />
             <input
@@ -149,7 +179,7 @@ function App() {
               placeholder='Tecnologías'
               name='technologies'
               id='technologies'
-              value={tec}
+              value={data.tec}
               onChange={handleInput}
             />
             <textarea
@@ -158,7 +188,7 @@ function App() {
               placeholder='Descripción'
               name='desc'
               id='desc'
-              value={desc}
+              value={data.desc}
               onChange={handleInput}
             ></textarea>
           </fieldset>
@@ -175,7 +205,7 @@ function App() {
               placeholder='Nombre'
               name='autor'
               id='autor'
-              value={nameUser}
+              value={data.nameUser}
               onChange={handleInput}
             />
             <input
@@ -184,7 +214,7 @@ function App() {
               placeholder='Trabajo'
               name='job'
               id='job'
-              value={jobUser}
+              value={data.jobUser}
               onChange={handleInput}
             />
           </fieldset>
