@@ -5,29 +5,32 @@ import cover from "../images/cover.jpeg";
 import user from "../images/user.jpeg";
 import logoAdalab from "../images/logo-adalab.png";
 import { useState } from "react";
+import dataApi from "../service/api";
 
 function App() {
-  const [name, setName] = useState("");
+ /* const [name, setName] = useState("");
   const [slogan, setSlogan] = useState("");
   const [repo, setRepo] = useState("");
   const [demo, setDemo] = useState("");
   const [tec, setTec] = useState("");
   const [desc, setDesc] = useState("");
   const [nameUser, setNameUser] = useState("");
-  const [jobUser, setJobUser] = useState("");
-
+  const [jobUser, setJobUser] = useState("");*/
+  const [urlCard, setUrlCard] = useState('');
   const [data, setData] = useState ({
     name: '',
     slogan: '',
     repo: '',
     demo: '',
-    tec: '',
+    technologies: '',
     desc: '',
-    nameUser: '',
-    jobUser: '',
+    autor: '',
+    job: '',
+    image:'https://via.placeholder.com/140x130',
+    photo:'https://via.placeholder.com/140x130',
   })
-
-  function isValidText(text){
+  let classHidden = 'hidden';
+ /* function isValidText(text){
   return /^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]*$/.test(text);
   }
   function isValidJob(text){
@@ -43,14 +46,15 @@ function App() {
   const isValidRepo = (webpage) => {
   const urlRegex = "^(http:\\/\\/www\\.|https:\\/\\/www\\.|http:\\/\\/|https:\\/\\/)?[a-zA-Z0-9]+([\\-\\.]{1}[a-zA-Z0-9]+)*\\.[a-zA-Z]{2,5}(:[0-9]{1,5})?(\\/\\/.*)?$";
   return RegExp(urlRegex).test(webpage);
-};
+};*/
 
   /* EFECTOS */
   /* FUNCIONES HANDLER */
   const handleInput = (ev) => {
     const inputValue = ev.target.value;
     const inputName = ev.target.name;
-    if (inputName === "name") {
+    setData({ ...data, [inputName]: inputValue });
+    /*if (inputName === "name") {
       setData({
         ...data,name:inputValue
       });
@@ -84,9 +88,18 @@ function App() {
       });
     } else  setData({
       ...data,jobUser:inputValue
-    });;
+    });;*/
   };
-}
+
+  const handleClickCreate = (ev) => {
+    ev.preventDefault();
+    dataApi(data)
+      .then(info => {
+        console.log(info);
+        setUrlCard(info.cardURL);
+        
+    })
+  }
   /* FUNCIONES Y VARIABLES AUXILIARES PARA PINTAR EL HTML */
   /* HTML */
   return (
@@ -179,7 +192,7 @@ function App() {
               placeholder='Tecnologías'
               name='technologies'
               id='technologies'
-              value={data.tec}
+              value={data.technologies}
               onChange={handleInput}
             />
             <textarea
@@ -205,7 +218,7 @@ function App() {
               placeholder='Nombre'
               name='autor'
               id='autor'
-              value={data.nameUser}
+              value={data.autor}
               onChange={handleInput}
             />
             <input
@@ -214,7 +227,7 @@ function App() {
               placeholder='Trabajo'
               name='job'
               id='job'
-              value={data.jobUser}
+              value={data.job}
               onChange={handleInput}
             />
           </fieldset>
@@ -224,12 +237,12 @@ function App() {
             <button className='buttons-img__btn'>Subir foto de autora</button>
           </section>
           <section className='buttons-img'>
-            <button className='buttons-img__btn'>Crear Tarjeta</button>
+            <button className='buttons-img__btn' onClick={handleClickCreate}>Crear Tarjeta</button>
           </section>
 
           <section className='card'>
-            <span className=''> La tarjeta ha sido creada: </span>
-            <a href='' className='' target='_blank' rel='noreferrer'></a>
+            <span className=''> La tarjeta ha sido creada:</span>
+            <a href={urlCard} className='' target='_blank' rel='noreferrer'>{urlCard}</a>
           </section>
         </section>
       </main>
