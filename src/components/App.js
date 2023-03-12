@@ -125,18 +125,18 @@ function App() {
                   "Lorem, ipsum dolor sit amet consectetur adipisicing elit Libero, delectus? Voluptates at hic aliquam porro ad suscip harum laboriosam saepe earum doloribus aperiam, ullam culpa accusantium placeat odit corrupti ipsum!"}
               </p>
               <section className='technologies'>
-                <p className='text'>{data.tec || "React JS, MongoDB"}</p>
+                <p className='text'>{data.technologies || "React JS, MongoDB"}</p>
                 <div className='icons'>
-                  <i className='fas fa-globe icon'></i>
-                  <i className='fab fa-github icon'></i>
+                  <a href={data.repo}><i className='fas fa-globe icon'></i></a>
+                  <a href={data.demo}><i className='fab fa-github icon'></i></a>
                 </div>
               </section>
             </section>
 
             <section className='info-autor'>
               <img className='image-autor' src={user} alt='' />
-              <p className='job'>{data.jobUser || "Full Stack Developer"}</p>
-              <p className='name'>{data.nameUser || "Emmelie Björklund"}</p>
+              <p className='job'>{data.job || "Full Stack Developer"}</p>
+              <p className='name'>{data.autor || "Emmelie Björklund"}</p>
             </section>
           </section>
         </section>
