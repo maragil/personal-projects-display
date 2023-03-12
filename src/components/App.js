@@ -127,8 +127,8 @@ function App() {
               <section className='technologies'>
                 <p className='text'>{data.technologies || "React JS, MongoDB"}</p>
                 <div className='icons'>
-                  <a href={data.repo}><i className='fas fa-globe icon'></i></a>
-                  <a href={data.demo}><i className='fab fa-github icon'></i></a>
+                  <a href={data.repo} rel='noreferrer' target='_blank'><i className='fas fa-globe icon'></i></a>
+                  <a href={data.demo} rel='noreferrer' target='_blank'><i className='fab fa-github icon'></i></a>
                 </div>
               </section>
             </section>
