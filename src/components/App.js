@@ -127,8 +127,8 @@ function App() {
               <section className='technologies'>
                 <p className='text'>{data.technologies || "React JS, MongoDB"}</p>
                 <div className='icons'>
-                  <a href={data.repo} rel='noreferrer' target='_blank'><i className='fas fa-globe icon'></i></a>
-                  <a href={data.demo} rel='noreferrer' target='_blank'><i className='fab fa-github icon'></i></a>
+                  <a href={data.demo} rel='noreferrer' target='_blank'><i className='fas fa-globe icon'></i></a>
+                  <a href={data.repo} rel='noreferrer' target='_blank'><i className='fab fa-github icon'></i></a>
                 </div>
               </section>
             </section>
@@ -173,14 +173,14 @@ function App() {
               type='text'
               name='repo'
               id='repo'
-              placeholder='Repo'
+              placeholder='Repo Ej. https://github.com/...'
               value={data.repo}
               onChange={handleInput}
             />
             <input
               className='project__input'
               type='text'
-              placeholder='Demo'
+              placeholder='Demo Ej. http://beta.adalab.es/...'
               name='demo'
               id='demo'
               value={data.demo}
@@ -240,9 +240,9 @@ function App() {
             <button className='buttons-img__btn' onClick={handleClickCreate}>Crear Tarjeta</button>
           </section>
 
-          <section className='card'>
+          <section className={'card ' + (!urlCard ? 'hidden' : '')}>
             <span className=''> La tarjeta ha sido creada:</span>
-            <a href={urlCard} className='' target='_blank' rel='noreferrer'>{urlCard}</a>
+            <a href={urlCard} className='card' target='_blank' rel='noreferrer'>{urlCard}</a>
           </section>
         </section>
       </main>
