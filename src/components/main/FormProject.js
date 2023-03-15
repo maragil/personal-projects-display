@@ -1,5 +1,6 @@
 import Input from './Input';
-function FormProject(data) {
+function FormProject({data,setDataInput}) {
+
     return (
         <fieldset className='project'>
         <Input
@@ -8,6 +9,7 @@ function FormProject(data) {
           name='name'
           id='name'
           placeholder= 'Nombre del proyecto'
+          setDataInput={setDataInput}
         />
         <Input
           className='project__input'
@@ -15,6 +17,7 @@ function FormProject(data) {
           name='slogan'
           id='slogan'
           placeholder= 'Slogan'
+          setDataInput={setDataInput}
         />
         <Input
            className='project__input'
@@ -22,7 +25,7 @@ function FormProject(data) {
           name='repo'
           id='repo'
           placeholder='Repo Ej. https://github.com/...'
-          onChange={handleInput}
+          setDataInput={setDataInput}
         />
         <Input
            className='project__input'
@@ -30,7 +33,7 @@ function FormProject(data) {
           name='demo'
           id='demo'
           placeholder='Demo Ej. http://beta.adalab.es/...'
-          onChange={handleInput}
+          setDataInput={setDataInput}
         />
         <Input
            className='project__input'
@@ -38,7 +41,7 @@ function FormProject(data) {
           name='technologies'
           id='technologies'
           placeholder='Tecnologías'
-          onChange={handleInput}
+          setDataInput={setDataInput}
         />
         <textarea
           className='project__textarea'
@@ -47,7 +50,7 @@ function FormProject(data) {
           name='desc'
           id='desc'
           value={data.desc}
-          onChange={handleInput}
+          setDataInput={setDataInput}
         ></textarea>
       </fieldset>
     );

@@ -1,4 +1,10 @@
-function Input(value, id, placeholder, name, onChange, className) {
+function Input({value, id, placeholder, name, setDataInput, className}) {
+    console.log(setDataInput);
+    const handleInput = (ev) => {
+    const inputValue = ev.target.value;
+    const inputName = ev.target.name;
+    setDataInput(inputValue,inputName);
+  };
     return (
         <input
             className={className}
@@ -7,7 +13,7 @@ function Input(value, id, placeholder, name, onChange, className) {
             name={name}
             id={id}
             value={value}
-            onChange={onChange}
+            onChange={handleInput}
         />
     );
 }

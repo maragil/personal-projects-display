@@ -1,5 +1,6 @@
 import Input from "./Input"; 
-function FormAuthor(data) {
+function FormAuthor({data,setDataInput}) {
+
     return (
         <fieldset className='autor'>
         <Input
@@ -8,7 +9,7 @@ function FormAuthor(data) {
             name='autor'
             id='autor'
             placeholder='Nombre'
-            onChange={handleInput}
+            setDataInput={setDataInput}
           />
            <Input
             className='autor__input'
@@ -16,7 +17,7 @@ function FormAuthor(data) {
             name='job'
             id='job'
             placeholder='Trabajo'
-            onChange={handleInput}
+            setDataInput={setDataInput}
           />
         </fieldset>
     );

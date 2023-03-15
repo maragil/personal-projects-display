@@ -46,12 +46,14 @@ function App() {
 
   /* EFECTOS */
   /* FUNCIONES HANDLER */
-  const handleInput = (ev) => {
-    const inputValue = ev.target.value;
-    const inputName = ev.target.name;
+  // const handleInput = (ev) => {
+  //   const inputValue = ev.target.value;
+  //   const inputName = ev.target.name;
+  //   setData({ ...data, [inputName]: inputValue });
+  // };
+  const setDataInput = (inputValue,inputName) =>{
     setData({ ...data, [inputName]: inputValue });
-  };
-
+  }
   const handleClickCreate = (ev) => {
     ev.preventDefault();
     dataApi(data)
@@ -82,7 +84,8 @@ function App() {
           </section>
 
           <FormProject
-            data={data} />
+            data={data} 
+            setDataInput={setDataInput} />
 
           <section className='ask-info'>
             <p className='ask-info__subtitle'>Cuéntanos sobre la autora</p>
@@ -90,7 +93,8 @@ function App() {
           </section>
 
           <FormAuthor
-            data={data} />
+            data={data}
+            setDataInput={setDataInput} />
 
           <section className='buttons-img'>
             <button className='buttons-img__btn'>Subir foto de proyecto</button>
