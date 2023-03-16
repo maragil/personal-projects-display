@@ -1,8 +1,6 @@
 /* IMPORT */
-
 import "../styles/App.scss";
-import cover from "../images/cover.jpeg";
-import user from "../images/user.jpeg";
+
 
 import { useState } from "react";
 import dataApi from "../service/api";
@@ -10,7 +8,7 @@ import Header from "./Header";
 import Preview from "./main/Preview";
 import FormAuthor from "./main/FormAuthor";
 import FormProject from "./main/FormProject";
-
+import GetAvatar from "./avatar/GetAvatar";
 
 function App() {
   const [urlCard, setUrlCard] = useState('');
@@ -23,9 +21,13 @@ function App() {
     desc: '',
     autor: '',
     job: '',
-    image:'https://via.placeholder.com/140x130',
-    photo:'https://via.placeholder.com/140x130',
+    image:'',
+    photo:'',
   })
+
+  const [avatar, setAvatar] = useState('');
+  const [autor, setAutor] = useState('');
+
  /* function isValidText(text){
   return /^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]*$/.test(text);
   }
@@ -60,20 +62,27 @@ function App() {
       .then(info => {
         console.log(info);
         setUrlCard(info.cardURL);
-        
     })
-  }
+  };
+
+  const updateAvatar = (avatar) => {
+    setData({...data, image: avatar});
+  };
+
+  const updateAutor = (autor) => {
+    setData({...data, photo: autor});
+  };
+
   /* FUNCIONES Y VARIABLES AUXILIARES PARA PINTAR EL HTML */
   /* HTML */
   return (
     <div className='container'>
       <Header/>
       <main className='main'>
-        
         <Preview
-          cover={cover}
+
           data={data}
-          user={user}
+
         />
         <section className='form'>
           <h2 className='form__title'>Información</h2>
@@ -84,7 +93,7 @@ function App() {
           </section>
 
           <FormProject
-            data={data} 
+            data={data}
             setDataInput={setDataInput} />
 
           <section className='ask-info'>
@@ -97,7 +106,21 @@ function App() {
             setDataInput={setDataInput} />
 
           <section className='buttons-img'>
-            <button className='buttons-img__btn'>Subir foto de proyecto</button>
+            {/* <button className='buttons-img__btn'
+            >Subir foto de proyecto</button> */}
+
+            <GetAvatar avatar={avatar}
+            updateAvatar={updateAvatar}
+            value='Subir foto del ptoyecto'
+            className='buttons-img__btn'
+            />
+
+            <GetAvatar avatar={autor}
+            updateAvatar={updateAutor}
+            value='Subir foto autora'
+            className='buttons-img__btn'
+            />
+
             <button className='buttons-img__btn'>Subir foto de autora</button>
           </section>
           <section className='buttons-img'>

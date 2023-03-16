@@ -20,7 +20,7 @@ function FormProject({data,setDataInput}) {
           setDataInput={setDataInput}
         />
         <Input
-           className='project__input'
+          className='project__input'
           value={data.repo}
           name='repo'
           id='repo'
@@ -28,7 +28,7 @@ function FormProject({data,setDataInput}) {
           setDataInput={setDataInput}
         />
         <Input
-           className='project__input'
+          className='project__input'
           value={data.demo}
           name='demo'
           id='demo'
@@ -36,7 +36,7 @@ function FormProject({data,setDataInput}) {
           setDataInput={setDataInput}
         />
         <Input
-           className='project__input'
+          className='project__input'
           value={data.technologies}
           name='technologies'
           id='technologies'
@@ -50,7 +50,7 @@ function FormProject({data,setDataInput}) {
           name='desc'
           id='desc'
           value={data.desc}
-          setDataInput={setDataInput}
+          // onChange={handleInput}
         ></textarea>
       </fieldset>
     );

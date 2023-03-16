@@ -1,8 +1,11 @@
-function Preview({ cover, data , user}) {
+import cover from "../../images/cover.jpeg";
+import user from "../../images/user.jpeg";
+
+function Preview({ data }) {
     console.log(data);
     return (
         <section className='preview'>
-            <img className='image' src={cover} alt='' />
+            <img className='image' src={data.image ? data.image : cover} alt='' />
 
             <section className='autor'>
                 <section className='info-project'>
@@ -25,7 +28,7 @@ function Preview({ cover, data , user}) {
                 </section>
 
                 <section className='info-autor'>
-                    <img className='image-autor' src={user} alt='' />
+                    <img className='image-autor' src={data.photo ? data.photo : user} alt='' />
                     <p className='job'>{data.job || "Full Stack Developer"}</p>
                     <p className='name'>{data.autor || "Emmelie Björklund"}</p>
                 </section>

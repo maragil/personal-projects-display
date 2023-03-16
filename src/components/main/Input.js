@@ -4,7 +4,7 @@ function Input({value, id, placeholder, name, setDataInput, className}) {
     const inputValue = ev.target.value;
     const inputName = ev.target.name;
     setDataInput(inputValue,inputName);
-  };
+    };
     return (
         <input
             className={className}
