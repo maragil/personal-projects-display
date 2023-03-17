@@ -27,8 +27,6 @@ function App() {
 
   const avatar = "";
   const autor = "";
-  // const [avatar, setAvatar] = useState("");
-  // const [autor, setAutor] = useState("");
 
   useEffect(() => {
     ls.set("url", {
@@ -96,7 +94,7 @@ function App() {
       <Header />
       <main className="main">
         <Preview data={data} />
-        <section className="form">
+        <form className="form" action="">
           <h2 className="form__title">Información</h2>
 
           <section className="ask-info">
@@ -114,8 +112,7 @@ function App() {
           <FormAuthor data={data} setDataInput={setDataInput} />
 
           <section className="buttons-img">
-            {/* <button className='buttons-img__btn'
-            >Subir foto de proyecto</button> */}
+            {/* <button className="buttons-img__btn">Subir foto de proyecto</button> */}
 
             <GetAvatar
               avatar={avatar}
@@ -131,7 +128,7 @@ function App() {
               className="buttons-img__btn"
             />
 
-            <button className="buttons-img__btn">Subir foto de autora</button>
+            {/* <button className="buttons-img__btn">Subir foto de autora</button> */}
           </section>
           <section className="buttons-img">
             <button className="buttons-img__btn" onClick={handleClickCreate}>
@@ -145,7 +142,7 @@ function App() {
               {urlCard}
             </a>
           </section>
-        </section>
+        </form>
       </main>
     </div>
   );
