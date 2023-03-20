@@ -67,12 +67,12 @@ function Landing () {
                     </div>
                 </article>
 
-            <div className="landing-card">
-                <Card data={obj1}></Card>
-                <Card data={obj2}></Card>
-                <Card data={obj3}></Card>
-                <Card data={obj4}></Card>
-            </div>
+                <div className="landing-card">
+                    <Card data={obj1}></Card>
+                    <Card data={obj2}></Card>
+                    <Card data={obj3}></Card>
+                    <Card data={obj4}></Card>
+                </div>
             </section>
         </>
     )

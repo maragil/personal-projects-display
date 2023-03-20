@@ -21,8 +21,8 @@ function Input({
     const inputValue = ev.target.value;
     const inputName = ev.target.name;
 
-    const urlRegex =
-      "^(http:\\/\\/www\\.|https:\\/\\/www\\.|http:\\/\\/|https:\\/\\/)?[a-zA-Z0-9]+([\\-\\.]{1}[a-zA-Z0-9]+)*\\.[a-zA-Z]{2,5}(:[0-9]{1,5})?(\\/\\/.*)?$";
+  const urlRegex =
+    "^(http:\\/\\/www\\.|https:\\/\\/www\\.|http:\\/\\/|https:\\/\\/)?[a-zA-Z0-9]+([\\-\\.]{1}[a-zA-Z0-9]+)*\\.[a-zA-Z]{2,5}(:[0-9]{1,5})?(\\/\\/.*)?$";
     if (inputName === "repo") {
       console.log(RegExp(urlRegex).test(inputValue));
       RegExp(urlRegex).test(inputValue) || !inputValue
@@ -41,9 +41,8 @@ function Input({
     }
   };
   return (
-
-   <label className="label">{label}
-   <input
+    <label className="label">{label}
+    <input
       className={className}
       type="text"
       placeholder={placeholder}

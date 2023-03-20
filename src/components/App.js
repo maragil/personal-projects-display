@@ -58,7 +58,7 @@ function App() {
   const handleClickCreate = (ev) => {
     ev.preventDefault();
 
-    let mesaggeError = "";
+  let mesaggeError = "";
     setUrlCard("");
     //Error campo requerido vacío
     for (const field in data) {
@@ -70,21 +70,19 @@ function App() {
         mesaggeError += `${translate(field)}, `;
     }
 
-    if (mesaggeError) {
-      mesaggeError = mesaggeError.substring(0, mesaggeError.length - 2);
-      setErrorEmptyFields(
-        `Debe rellenar todos los campos requeridos: ${mesaggeError}`
-      );
-    } else {
-      dataApi(data).then((info) => {
-        if (info.success) {
-          setUrlCard(info.cardURL);
-          setErrorDatabase("");
-        } else {
-          setUrlCard("");
-          setErrorDatabase(translate(info.error));
-        }
-      });
+  if (mesaggeError) {
+    mesaggeError = mesaggeError.substring(0, mesaggeError.length - 2);
+    setErrorEmptyFields(`Debe rellenar todos los campos requeridos: ${mesaggeError}`);
+  } else {
+    dataApi(data).then((info) => {
+      if (info.success) {
+        setUrlCard(info.cardURL);
+        setErrorDatabase("");
+      } else {
+        setUrlCard("");
+        setErrorDatabase(translate(info.error));
+      }
+    });
       setErrorEmptyFields("");
     }
   };
@@ -106,83 +104,68 @@ function App() {
       <Header />
 
       <main className="main">
-      <Routes>
-        <Route path="/"
-                element={<Landing/>}>
-        </Route>
-
-        <Route path='/create-card'
-                element={
-                  <>
-        <Preview data={data} />
-        <form className="form" onSubmit={handleSubmit}>
-          <h2 className="form__title">Información</h2>
-
-                <section className="ask-info">
-                  <p className="ask-info__subtitle">Cuéntanos sobre el proyecto</p>
+        <Routes>
+          <Route path="/" element={<Landing/>}></Route>
+          <Route path='/create-card' element={
+          <>
+            <Preview data={data}/>
+            <form className="form" onSubmit={handleSubmit}>
+            <h2 className="form__title">Información</h2>
+              <section className="ask-info">
+                <p className="ask-info__subtitle">Cuéntanos sobre el proyecto</p>
                   <hr className="line" />
-                </section>
+              </section>
 
+              <FormProject
+                data={data}
+                setDataInput={setDataInput}
+                setErrorValidationRepo={setErrorValidationRepo}
+                setErrorValidationDemo={setErrorValidationDemo}
+                errorValidationRepo={errorValidationRepo}
+                errorValidationDemo={errorValidationDemo}
+              />
 
-          <FormProject
-            data={data}
-            setDataInput={setDataInput}
-            setErrorValidationRepo={setErrorValidationRepo}
-            setErrorValidationDemo={setErrorValidationDemo}
-            errorValidationRepo={errorValidationRepo}
-            errorValidationDemo={errorValidationDemo}
-          />
-
-                <section className="ask-info">
-                  <p className="ask-info__subtitle">Cuéntanos sobre la autora</p>
+              <section className="ask-info">
+                <p className="ask-info__subtitle">Cuéntanos sobre la autora</p>
                   <hr className="line" />
-                </section>
+              </section>
 
-                <FormAuthor data={data} setDataInput={setDataInput} />
+              <FormAuthor data={data} setDataInput={setDataInput} />
 
-                <section className="buttons-img">
+              <section className="buttons-img">
+                <GetAvatar
+                  avatar={avatar}
+                  updateAvatar={updateAvatar}
+                  value="Subir foto del ptoyecto"
+                  className="buttons-img__btn"/>
 
-                  <GetAvatar
-                    avatar={avatar}
-                    updateAvatar={updateAvatar}
-                    value="Subir foto del ptoyecto"
-                    className="buttons-img__btn"
-                  />
+                <GetAvatar
+                  avatar={autor}
+                  updateAvatar={updateAutor}
+                  value="Subir foto autora"
+                  className="buttons-img__btn"/>
+              </section>
 
-                  <GetAvatar
-                    avatar={autor}
-                    updateAvatar={updateAutor}
-                    value="Subir foto autora"
-                    className="buttons-img__btn"
-                  />
+              <section className="buttons-img">
+                <button
+                  type="submit"
+                  className="buttons-img__btn"
+                  onClick={handleClickCreate}>Crear Tarjeta</button>
+              </section>
 
-          </section>
-          <section className="buttons-img">
-            <button
-              type="submit"
-              className="buttons-img__btn"
-              onClick={handleClickCreate}>
-              Crear Tarjeta</button>
-          </section>
+              <section className={"text--error " + (!errorEmptyFields &&      !errorDatabase ? "hidden" : "")}>
+                <span className="">{errorEmptyFields || errorDatabase}</span>
+              </section>
 
-          <section
-            className={
-              "text--error " +
-              (!errorEmptyFields && !errorDatabase ? "hidden" : "")
-            }>
-            <span className="">{errorEmptyFields || errorDatabase}</span>
-          </section>
-
-          <section className={"card " + (!urlCard ? "hidden" : "")}>
-            <span className=""> La tarjeta ha sido creada:</span>
-            <a href={urlCard} className="card" target="_blank" rel="noreferrer">
-              {urlCard}
-            </a>
-          </section>
-        </form>
-        </>}>
-        </Route>
-      </Routes>
+              <section className={"card " + (!urlCard ? "hidden" : "")}>
+                <span className=""> La tarjeta ha sido creada:</span>
+                <a href={urlCard} className="card" target="_blank" rel="noreferrer">
+                  {urlCard}</a>
+              </section>
+            </form>
+          </>}>
+          </Route>
+        </Routes>
       </main>
     </div>
   );

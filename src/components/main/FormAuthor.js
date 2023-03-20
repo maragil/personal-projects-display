@@ -13,15 +13,15 @@ function FormAuthor({ data, setDataInput }) {
           setDataInput={setDataInput}
         />
 
-      <Input
-        label='Puesto de trabajo'
-        className="autor__input"
-        value={data.job}
-        name="job"
-        id="job"
-        placeholder="Ej: Front-end"
-        setDataInput={setDataInput}
-      />
+        <Input
+          label='Puesto de trabajo'
+          className="autor__input"
+          value={data.job}
+          name="job"
+          id="job"
+          placeholder="Ej: Front-end"
+          setDataInput={setDataInput}
+        />
     </fieldset>
   );
 }

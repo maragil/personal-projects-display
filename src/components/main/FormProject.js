@@ -1,5 +1,6 @@
 import Input from "./Input";
 import TextArea from "./TextArea";
+
 function FormProject({
   data,
   setDataInput,
@@ -39,10 +40,8 @@ function FormProject({
         placeholder="Ej. https://github.com/mi-proyecto"
         setDataInput={setDataInput}
       />
-
       <p className={"text--error " + (!errorValidationRepo ? "hidden" : "")}>
-        {errorValidationRepo}
-      </p>
+        {errorValidationRepo}</p>
       <Input
         label='Demo'
         className="project__input"
@@ -55,8 +54,7 @@ function FormProject({
         setDataInput={setDataInput}
       />
       <p className={"text--error " + (!errorValidationDemo ? "hidden" : "")}>
-        {errorValidationDemo}
-      </p>
+        {errorValidationDemo}</p>
       <Input
         label='Tecnologías'
         className="project__input"
@@ -74,8 +72,8 @@ function FormProject({
         name="desc"
         id="desc"
         value={data.desc}
-        setDataInput={setDataInput}
-      ></TextArea>
+        setDataInput={setDataInput}>
+      </TextArea>
     </fieldset>
   );
 }
