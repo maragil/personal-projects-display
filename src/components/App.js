@@ -1,7 +1,7 @@
 /* IMPORT */
 import "../styles/App.scss";
 import ls from "../service/localstorage";
-
+import translate from "../service/translate";
 import { useState, useEffect } from "react";
 import dataApi from "../service/api";
 import Header from "./Header";
@@ -42,6 +42,10 @@ function App() {
       photo: data.photo,
     });
   }, [data]);
+  const [errorEmptyFields, setErrorEmptyFields] = useState("");
+  const [errorValidationRepo, setErrorValidationRepo] = useState("");
+  const [errorValidationDemo, setErrorValidationDemo] = useState("");
+  const [errorDatabase, setErrorDatabase] = useState("");
 
   /* function isValidText(text){
   return /^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]*$/.test(text);
@@ -71,12 +75,39 @@ function App() {
   const setDataInput = (inputValue, inputName) => {
     setData({ ...data, [inputName]: inputValue });
   };
+
   const handleClickCreate = (ev) => {
     ev.preventDefault();
-    dataApi(data).then((info) => {
-      console.log(info);
-      setUrlCard(info.cardURL);
-    });
+
+    let mesaggeError = "";
+    setUrlCard("");
+    //Error campo requerido vacío
+    for (const field in data) {
+      if (!data[field]) {
+        mesaggeError += `${translate(field)}, `;
+      } else if (field === "repo" && errorValidationRepo)
+        mesaggeError += `${translate(field)}, `;
+      else if (field === "demo" && errorValidationDemo)
+        mesaggeError += `${translate(field)}, `;
+    }
+
+    if (mesaggeError) {
+      mesaggeError = mesaggeError.substring(0, mesaggeError.length - 2);
+      setErrorEmptyFields(
+        `Debe rellenar todos los campos requeridos: ${mesaggeError}`
+      );
+    } else {
+      dataApi(data).then((info) => {
+        if (info.success) {
+          setUrlCard(info.cardURL);
+          setErrorDatabase("");
+        } else {
+          setUrlCard("");
+          setErrorDatabase(translate(info.error));
+        }
+      });
+      setErrorEmptyFields("");
+    }
   };
 
   const updateAvatar = (avatar) => {
@@ -86,7 +117,9 @@ function App() {
   const updateAutor = (autor) => {
     setData({ ...data, photo: autor });
   };
-
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
   /* FUNCIONES Y VARIABLES AUXILIARES PARA PINTAR EL HTML */
   /* HTML */
   return (
@@ -94,7 +127,7 @@ function App() {
       <Header />
       <main className="main">
         <Preview data={data} />
-        <form className="form" action="">
+        <form className="form" onSubmit={handleSubmit}>
           <h2 className="form__title">Información</h2>
 
           <section className="ask-info">
@@ -102,7 +135,14 @@ function App() {
             <hr className="line" />
           </section>
 
-          <FormProject data={data} setDataInput={setDataInput} />
+          <FormProject
+            data={data}
+            setDataInput={setDataInput}
+            setErrorValidationRepo={setErrorValidationRepo}
+            setErrorValidationDemo={setErrorValidationDemo}
+            errorValidationRepo={errorValidationRepo}
+            errorValidationDemo={errorValidationDemo}
+          />
 
           <section className="ask-info">
             <p className="ask-info__subtitle">Cuéntanos sobre la autora</p>
@@ -131,9 +171,22 @@ function App() {
             {/* <button className="buttons-img__btn">Subir foto de autora</button> */}
           </section>
           <section className="buttons-img">
-            <button className="buttons-img__btn" onClick={handleClickCreate}>
+            <button
+              type="submit"
+              className="buttons-img__btn"
+              onClick={handleClickCreate}
+            >
               Crear Tarjeta
             </button>
+          </section>
+
+          <section
+            className={
+              "text--error " +
+              (!errorEmptyFields && !errorDatabase ? "hidden" : "")
+            }
+          >
+            <span className="">{errorEmptyFields || errorDatabase}</span>
           </section>
 
           <section className={"card " + (!urlCard ? "hidden" : "")}>
