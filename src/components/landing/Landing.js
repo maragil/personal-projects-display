@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import Card from "../main/Card";
 // import "../../styles/layout/preview.scss";
 import "../../styles/layout/card.scss";
+import Maria from "../../images/Maria-Araujo.jpeg";
+import Mariana from "../../images/foto-mariana.jpg";
 
 
 function Landing () {
@@ -12,10 +14,10 @@ function Landing () {
         demo: 'Prueba',
         technologies: 'Prueba',
         desc: 'Prueba',
-        autor: 'Prueba',
+        autor: 'María Araujo',
         job: 'Prueba',
         image: 'Prueba',
-        photo: 'Prueba',
+        photo: Maria,
     }
     const obj2 = {
         name: 'Nombre' ,
@@ -24,7 +26,7 @@ function Landing () {
         demo: 'Prueba',
         technologies: 'Prueba',
         desc: 'Prueba',
-        autor: 'Prueba',
+        autor: 'Mónica Saborido',
         job: 'Prueba',
         image: 'Prueba',
         photo: 'Prueba',
@@ -36,7 +38,7 @@ function Landing () {
         demo: 'Prueba',
         technologies: 'Prueba',
         desc: 'Prueba',
-        autor: 'Prueba',
+        autor: 'Celia Ramirez',
         job: 'Prueba',
         image: 'Prueba',
         photo: 'Prueba',
@@ -48,10 +50,10 @@ function Landing () {
         demo: 'Prueba',
         technologies: 'Prueba',
         desc: 'Prueba',
-        autor: 'Prueba',
+        autor: 'Mariana',
         job: 'Prueba',
         image: 'Prueba',
-        photo: 'Prueba',
+        photo: Mariana,
     }
     return (
         <>
