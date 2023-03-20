@@ -1,7 +1,6 @@
 .main {
   display: flex;
   flex-direction: column;
-
   @media (min-width: 768px) {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
@@ -27,7 +26,7 @@
     height: 312px;
   }
 }
-//info-autor
+
 .info-autor {
   width: 50%;
   text-align: center;
@@ -63,7 +62,7 @@
     }
   }
 }
-//info-project
+
 .info-project {
   width: 70%;
   @media all and (min-width: 768px) {
@@ -130,6 +129,7 @@
     );
   }
 }
+
 .btn-color {
   border-radius: 20px;
   width: 85px;
@@ -140,7 +140,7 @@
   background-color: black;
   color: white;
 }
-//technologies
+
 .technologies {
   font-family: "Catamaran", sans-serif;
   font-weight: 600;
@@ -156,10 +156,12 @@
     padding: 10px;
   }
 }
+
 .icons {
   display: flex;
   gap: 10px;
 }
+
 .icon {
   border-radius: 10px;
   box-shadow: 0 0 5px #60686b;
@@ -168,7 +170,7 @@
     font-size: 15px;
   }
 }
-//generic
+
 .card {
   color: white;
   text-align: center;
