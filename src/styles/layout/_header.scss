@@ -1,9 +1,6 @@
 .container {
   background-color: #302c42;
   padding: 20px 22px 20px 26px;
-  @media (min-width: 768px) {
-    height: 100vh;
-  }
 }
 
 .header {
@@ -33,6 +30,7 @@
     font-family: $font-poppins;
     font-weight: 300;
     padding: 5px;
+    text-decoration: none;
   }
   &__logo--adalab {
     width: 123px;
