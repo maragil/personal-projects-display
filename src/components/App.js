@@ -9,6 +9,8 @@ import Preview from "./main/Preview";
 import FormAuthor from "./main/FormAuthor";
 import FormProject from "./main/FormProject";
 import GetAvatar from "./avatar/GetAvatar";
+import { Routes, Route } from "react-router-dom";
+import Landing from "./landing/Landing";
 
 function App() {
   const [urlCard, setUrlCard] = useState("");
@@ -63,11 +65,6 @@ function App() {
 
   /* EFECTOS */
   /* FUNCIONES HANDLER */
-  // const handleInput = (ev) => {
-  //   const inputValue = ev.target.value;
-  //   const inputName = ev.target.name;
-  //   setData({ ...data, [inputName]: inputValue });
-  // };
   const setDataInput = (inputValue, inputName) => {
     setData({ ...data, [inputName]: inputValue });
   };
@@ -92,57 +89,67 @@ function App() {
   return (
     <div className="container">
       <Header />
+
       <main className="main">
-        <Preview data={data} />
-        <form className="form" action="">
-          <h2 className="form__title">Información</h2>
+      <Routes>
+        <Route path="/"
+                element={<Landing/>}></Route>
+        <Route path='/create-card'
+                element={
+                  <>
+                  <Preview data={data} />
+                <form className="form" action="">
+                <h2 className="form__title">Información</h2>
 
-          <section className="ask-info">
-            <p className="ask-info__subtitle">Cuéntanos sobre el proyecto</p>
-            <hr className="line" />
-          </section>
+                <section className="ask-info">
+                  <p className="ask-info__subtitle">Cuéntanos sobre el proyecto</p>
+                  <hr className="line" />
+                </section>
 
-          <FormProject data={data} setDataInput={setDataInput} />
+                <FormProject data={data} setDataInput={setDataInput} />
 
-          <section className="ask-info">
-            <p className="ask-info__subtitle">Cuéntanos sobre la autora</p>
-            <hr className="line" />
-          </section>
+                <section className="ask-info">
+                  <p className="ask-info__subtitle">Cuéntanos sobre la autora</p>
+                  <hr className="line" />
+                </section>
 
-          <FormAuthor data={data} setDataInput={setDataInput} />
+                <FormAuthor data={data} setDataInput={setDataInput} />
 
-          <section className="buttons-img">
-            {/* <button className="buttons-img__btn">Subir foto de proyecto</button> */}
+                <section className="buttons-img">
+                  {/* <button className="buttons-img__btn">Subir foto de proyecto</button> */}
 
-            <GetAvatar
-              avatar={avatar}
-              updateAvatar={updateAvatar}
-              value="Subir foto del ptoyecto"
-              className="buttons-img__btn"
-            />
+                  <GetAvatar
+                    avatar={avatar}
+                    updateAvatar={updateAvatar}
+                    value="Subir foto del ptoyecto"
+                    className="buttons-img__btn"
+                  />
 
-            <GetAvatar
-              avatar={autor}
-              updateAvatar={updateAutor}
-              value="Subir foto autora"
-              className="buttons-img__btn"
-            />
+                  <GetAvatar
+                    avatar={autor}
+                    updateAvatar={updateAutor}
+                    value="Subir foto autora"
+                    className="buttons-img__btn"
+                  />
 
-            {/* <button className="buttons-img__btn">Subir foto de autora</button> */}
-          </section>
-          <section className="buttons-img">
-            <button className="buttons-img__btn" onClick={handleClickCreate}>
-              Crear Tarjeta
-            </button>
-          </section>
+                  {/* <button className="buttons-img__btn">Subir foto de autora</button> */}
+                </section>
+                <section className="buttons-img">
+                  <button className="buttons-img__btn" onClick={handleClickCreate}>
+                    Crear Tarjeta
+                  </button>
+                </section>
 
-          <section className={"card " + (!urlCard ? "hidden" : "")}>
-            <span className=""> La tarjeta ha sido creada:</span>
-            <a href={urlCard} className="card" target="_blank" rel="noreferrer">
-              {urlCard}
-            </a>
-          </section>
-        </form>
+                <section className={"card " + (!urlCard ? "hidden" : "")}>
+                  <span className=""> La tarjeta ha sido creada:</span>
+                  <a href={urlCard} className="card" target="_blank" rel="noreferrer">
+                    {urlCard}
+                  </a>
+                </section>
+              </form>
+              </>}>
+              </Route>
+      </Routes>
       </main>
     </div>
   );
