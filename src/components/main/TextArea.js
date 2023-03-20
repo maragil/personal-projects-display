@@ -1,10 +1,11 @@
-function TextArea({ value, id, placeholder, name, setDataInput, className }) {
+function TextArea({ value, id, placeholder, name, setDataInput, className, label }) {
   const handleInput = (ev) => {
     const inputValue = ev.target.value;
     const inputName = ev.target.name;
     setDataInput(inputValue, inputName);
   };
   return (
+    <label className="label">{label}
     <textarea
       className={className}
       type="text"
@@ -15,6 +16,7 @@ function TextArea({ value, id, placeholder, name, setDataInput, className }) {
       value={value}
       onChange={handleInput}
     />
+    </label>
   );
 }
 

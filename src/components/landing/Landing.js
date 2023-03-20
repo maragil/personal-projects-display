@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import Card from "../main/Card";
-// import "../../styles/layout/preview.scss";
 import "../../styles/layout/card.scss";
 import Maria from "../../images/Maria-Araujo.jpeg";
 import Mariana from "../../images/foto-mariana.jpg";
@@ -63,8 +62,8 @@ function Landing () {
                     <h3 className="subtitle">Escaparate en línea para recoger ideas a través de la tecnología</h3>
 
                     <div className="section-btn">
-                    <Link className="buttons-img" to='/create-card'>Nuevo proyecto</Link>
-                    <Link className="buttons-img" to='/'>Ver proyectos</Link>
+                    <Link className="buttons" to='/create-card'>Nuevo proyecto</Link>
+                    <Link className="buttons" to='/'>Ver proyectos</Link>
                     </div>
                 </article>
 

@@ -49,24 +49,6 @@ function App() {
   const [errorValidationDemo, setErrorValidationDemo] = useState("");
   const [errorDatabase, setErrorDatabase] = useState("");
 
-  /* function isValidText(text){
-  return /^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]*$/.test(text);
-  }
-  function isValidJob(text){
-  return /^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]*$/.test(text);
-  }
-  // function isValidMail(text){
-  // // return /^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$/.test(text);
-
-  // return /^((https?|ftp|file):\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/.test(text);
-  // const urlRegex = `^(http:\\/\\/www\\.|https:\\/\\/www\\.|http:\\/\\/|https:\\/\\/)?[a-zA-Z0-9]+([\\-\\.]{1}[a-zA-Z0-9]+)*\\.[a-zA-Z]{2,5}(:[0-9]{1,5})?(\\/\\/.*)?$`;
-
-  // }
-  const isValidRepo = (webpage) => {
-  const urlRegex = "^(http:\\/\\/www\\.|https:\\/\\/www\\.|http:\\/\\/|https:\\/\\/)?[a-zA-Z0-9]+([\\-\\.]{1}[a-zA-Z0-9]+)*\\.[a-zA-Z]{2,5}(:[0-9]{1,5})?(\\/\\/.*)?$";
-  return RegExp(urlRegex).test(webpage);
-};*/
-
   /* EFECTOS */
   /* FUNCIONES HANDLER */
   const setDataInput = (inputValue, inputName) => {

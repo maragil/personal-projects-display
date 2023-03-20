@@ -8,6 +8,7 @@ function Input({
   setErrorValidationDemo,
   className,
   pattern,
+  label,
 }) {
   const handleInput = (ev) => {
     const inputValue = ev.target.value;
@@ -40,7 +41,9 @@ function Input({
     }
   };
   return (
-    <input
+
+   <label className="label">{label}
+   <input
       className={className}
       type="text"
       placeholder={placeholder}
@@ -52,6 +55,7 @@ function Input({
       pattern={pattern}
       onBlur={handleBlur}
     />
+    </label>
   );
 }
 

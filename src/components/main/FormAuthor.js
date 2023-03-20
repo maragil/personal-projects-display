@@ -1,24 +1,25 @@
 import Input from "./Input";
+
 function FormAuthor({ data, setDataInput }) {
   return (
-    <fieldset className="autor">
-      <label className="card" htmlFor="autor">
-        Nombre del autor
+    <fieldset className="project">
         <Input
+          label='Nombre del autor'
           className="autor__input"
           value={data.autor}
           name="autor"
           id="autor"
-          placeholder="Nombre"
+          placeholder="Ej: Maria"
           setDataInput={setDataInput}
         />
-      </label>
+
       <Input
+        label='Puesto de trabajo'
         className="autor__input"
         value={data.job}
         name="job"
         id="job"
-        placeholder="Trabajo"
+        placeholder="Ej: Front-end"
         setDataInput={setDataInput}
       />
     </fieldset>

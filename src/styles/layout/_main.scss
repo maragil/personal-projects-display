@@ -21,6 +21,8 @@
 .project {
   margin: 13px 24px 0 28px;
   &__input {
+    font-size: 12px;
+    margin-top: 6px;
     width: 100%;
     border-radius: 40px;
     border: solid 2px white;
@@ -37,6 +39,8 @@
   }
 
   &__textarea {
+    font-size: 12px;
+    margin-top: 6px;
     width: 100%;
     border-radius: 40px;
     border: solid 2px white;
@@ -66,6 +70,9 @@
 .autor {
   margin: 13px 24px 0 28px;
   &__input {
+    font-size: 12px;
+    display: flex;
+    margin-top: 6px;
     font-size: 1rem;
     width: 100%;
     border-radius: 40px;
@@ -80,6 +87,7 @@
   ::placeholder {
     color: white;
     font-size: 10px;
+    display: flex;
   }
 }
 
@@ -115,4 +123,12 @@
     rgba(255, 255, 255, 0.75),
     rgba(255, 255, 255, 0)
   );
+}
+
+.label{
+  font-family: $font-montserrat;
+    font-size: 12px;
+    color: $white;
+    text-align: center;
+    padding: 10px;
 }
