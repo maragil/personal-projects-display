@@ -22,7 +22,7 @@ function Card ({data}){
             </section>
 
             <section className='info-autor'>
-                <img className='image-autor' src={data.photo ? data.photo : user} alt='' />
+                <img className='image-autor' src={data.image ? data.image : user} alt='' />
                 <p className='job'>{data.job || "Full Stack Developer"}</p>
                 <p className='name'>{data.autor || "Emmelie Björklund"}</p>
             </section>

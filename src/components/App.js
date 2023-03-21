@@ -23,8 +23,8 @@ function App() {
     desc: ls.get("url", {}).desc || "",
     autor: ls.get("url", {}).autor || "",
     job: ls.get("url", {}).job || "",
-    image: ls.get("url", {}).image || "",
-    photo: ls.get("url", {}).photo || "",
+    image: ls.get("url", {}).photo || "",
+    photo: ls.get("url", {}).image || "",
   });
 
   const avatar = "";
@@ -40,8 +40,8 @@ function App() {
       desc: data.desc,
       autor: data.autor,
       job: data.job,
-      image: data.image,
-      photo: data.photo,
+      photo: data.image,
+      image: data.photo,
     });
   }, [data]);
   const [errorEmptyFields, setErrorEmptyFields] = useState("");

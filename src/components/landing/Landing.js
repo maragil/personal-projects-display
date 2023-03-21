@@ -3,6 +3,8 @@ import Card from "../main/Card";
 import "../../styles/layout/card.scss";
 import Maria from "../../images/Maria-Araujo.jpeg";
 import Mariana from "../../images/foto-mariana.jpg";
+import monica from "../../images/monica.jpeg";
+import celia from "../../images/celia.jpg";
 
 
 function Landing () {
@@ -15,8 +17,8 @@ function Landing () {
         desc: 'Prueba',
         autor: 'María Araujo',
         job: 'Prueba',
-        image: 'Prueba',
-        photo: Maria,
+        photo: 'Prueba',
+        image: Maria,
     }
     const obj2 = {
         name: 'Nombre' ,
@@ -27,8 +29,8 @@ function Landing () {
         desc: 'Prueba',
         autor: 'Mónica Saborido',
         job: 'Prueba',
-        image: 'Prueba',
         photo: 'Prueba',
+        image: monica,
     }
     const obj3 = {
         name: 'Nombre' ,
@@ -39,20 +41,20 @@ function Landing () {
         desc: 'Prueba',
         autor: 'Celia Ramirez',
         job: 'Prueba',
-        image: 'Prueba',
         photo: 'Prueba',
+        image: celia,
     }
     const obj4 = {
-        name: 'Nombre' ,
-        slogan: 'Prueba',
-        repo: 'Prueba',
-        demo: 'Prueba',
-        technologies: 'Prueba',
-        desc: 'Prueba',
-        autor: 'Mariana',
-        job: 'Prueba',
-        image: 'Prueba',
-        photo: Mariana,
+        name: 'Tu biblioteca personal' ,
+        slogan: '¡Todos tus libros en un click!',
+        repo: 'https://github.com',
+        demo: 'https://github.com',
+        technologies: 'HTML, CSS, JavaScript, React',
+        desc: 'Crea listas de todos tus libros y clasifícalos. Puedes marcar libros como léidos, pendientes, prestados. Incluso crear listas de deseos con libros que te gustaría tener!',
+        autor: 'Mariana Lobo',
+        job: 'Front-end developer',
+        photo: 'Prueba',
+        image: Mariana,
     }
     return (
         <>
