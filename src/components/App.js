@@ -40,8 +40,8 @@ function App() {
       desc: data.desc,
       autor: data.autor,
       job: data.job,
-      photo: data.photo,
-      image: data.image,
+      photo: data.image,
+      image: data.photo,
     });
   }, [data]);
   const [errorEmptyFields, setErrorEmptyFields] = useState("");
