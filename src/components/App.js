@@ -40,8 +40,8 @@ function App() {
       desc: data.desc,
       autor: data.autor,
       job: data.job,
-      photo: data.image,
-      image: data.photo,
+      photo: data.photo,
+      image: data.image,
     });
   }, [data]);
   const [errorEmptyFields, setErrorEmptyFields] = useState("");
@@ -136,13 +136,13 @@ function App() {
                 <GetAvatar
                   avatar={avatar}
                   updateAvatar={updateAvatar}
-                  value="Subir foto del ptoyecto"
+                  value="Subir foto autora"
                   className="buttons-img__btn"/>
 
                 <GetAvatar
                   avatar={autor}
                   updateAvatar={updateAutor}
-                  value="Subir foto autora"
+                  value="Subir foto del proyecto"
                   className="buttons-img__btn"/>
               </section>
 
