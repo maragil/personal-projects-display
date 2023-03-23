@@ -21,8 +21,12 @@ function Input({
     const inputValue = ev.target.value;
     const inputName = ev.target.name;
 
-  const urlRegex =
-    "^(http:\\/\\/www\\.|https:\\/\\/www\\.|http:\\/\\/|https:\\/\\/)?[a-zA-Z0-9]+([\\-\\.]{1}[a-zA-Z0-9]+)*\\.[a-zA-Z]{2,5}(:[0-9]{1,5})?(\\/\\/.*)?$";
+    // const urlRegex =
+    //   "^(http:\\/\\/www\\.|https:\\/\\/www\\.|http:\\/\\/|https:\\/\\/)?[a-zA-Z0-9]+([\\-\\.]{1}[a-zA-Z0-9]+)*\\.[a-zA-Z]{2,5}(:[0-9]{1,5})?(\\/\\/.*)?$";
+    const urlRegex =
+      "^((((https?|ftps?|gopher|telnet|nntp)://)|(mailto:|news:))" +
+      "(%{2}|[-()_.!~*';/?:@&=+$, A-Za-z0-9])+)" +
+      "([).!';/?:, ][[:blank:]])?$";
     if (inputName === "repo") {
       console.log(RegExp(urlRegex).test(inputValue));
       RegExp(urlRegex).test(inputValue) || !inputValue
@@ -41,19 +45,20 @@ function Input({
     }
   };
   return (
-    <label className="label">{label}
-    <input
-      className={className}
-      type="text"
-      placeholder={placeholder}
-      name={name}
-      id={id}
-      value={value}
-      onChange={handleInput}
-      required
-      pattern={pattern}
-      onBlur={handleBlur}
-    />
+    <label className="label">
+      {label}
+      <input
+        className={className}
+        type="text"
+        placeholder={placeholder}
+        name={name}
+        id={id}
+        value={value}
+        onChange={handleInput}
+        required
+        pattern={pattern}
+        onBlur={handleBlur}
+      />
     </label>
   );
 }
