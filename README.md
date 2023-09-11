@@ -6,7 +6,7 @@ Esta aplicación web es el resultado del proyecto final grupal correspondiente a
 
 Este proyecto tiene como objetivo desarrollar una herramienta web que permita crear una página para mostrar tus proyectos personales o cualquier idea interesante que desees compartir. Podrás ingresar fácilmente tus datos personales y profesionales, y obtendrás una vista maquetada con toda la información.
 
-## :dart: Objetivos:
+## :dart: Objetivos.
 
 1. Saber identificar y generar los componentes de una página, separarlos y crear componentes visualmente similares a partir de estos.
 
@@ -21,7 +21,7 @@ Este proyecto tiene como objetivo desarrollar una herramienta web que permita cr
 6. Mejorar las habilidades de comunicación en público al exponer el proyecto en la sesión final.
    
 
-## :scroll: Requerimientos:
+## :scroll: Requerimientos.
 
 La aplicación debe permitir al usuario introducir la información en un formulario y que este texto se muestre maquetado automáticamente en un cuadro similar a una tarjeta con información del proyecto.
 
@@ -75,16 +75,16 @@ Este proyecto ha sido creado utilizando una combinación de herramientas y tecno
 
 <p align= 'center'>
 <a href="https://www.w3schools.com/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a>
- <a href="https://sass-lang.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg" alt="sass" width="40" height="40"/> </a> 
- <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a>
- <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="60" height="60"/> </a>
+<a href="https://sass-lang.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg" alt="sass" width="40" height="40"/> </a> 
+<a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a>
+<a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="60" height="60"/> </a>
 <a href="https://expressjs.com" target="_blank" rel="noreferrer"> <img src="https://github.com/devicons/devicon/blob/master/icons/express/express-original-wordmark.svg" alt="express" width="40" height="40"/>
 <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="git" width="40" height="40"/> </a>  
- <a href="https://github.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" width="40" height="40"/> </a>
- <a href="https://code.visualstudio.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg" alt="vscode" width="40" height="40"/> </a>
+<a href="https://github.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" width="40" height="40"/> </a>
+<a href="https://code.visualstudio.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg" alt="vscode" width="40" height="40"/> </a>
 </p>
 
-## 📬 CONTACTO.
+## 📬 Contacto.
 ¡Espero que te haya gustado esta aplicación! 💚
 
 Si quieres ver este y otros proyectos los puedes encontrar en mi porfolio: <https://www.maragil.com> 
