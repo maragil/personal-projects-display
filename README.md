@@ -19,28 +19,11 @@ Este proyecto tiene como objetivo desarrollar una herramienta web que permita cr
 5. Mejorar la comunicación entre los miembros del equipo.
 
 6. Mejorar las habilidades de comunicación en público al exponer el proyecto en la sesión final.
-
-## :bookmark_tabs: Especificaciones:
-
-En el desarrollo de esta aplicación web usaremos las siguientes tecnologías:
-
-- Uso de Sass para los estilos.
-
-- Uso de mediaqueries para que el diseño sea adaptable al dispositivo.
-
-- Uso de React para la estructuración en componentes de la aplicación.
-
-- Desarrollo usando la estrategia Mobile First.
-
-- Uso de git para el control de versiones del proyecto, con ramas y pull-requests para revisar los cambios de las compañeras.
-
-- Publicación del resultado en Internet usando GitHub Pages.
-
-## :electric_plug: Funcionamiento:
-
-La aplicación debe permitir a la usuaria introducir la información en un formulario y que este texto se muestre maquetado automáticamente en un cuadro similar a una tarjeta con información del proyecto.
+   
 
 ## :scroll: Requerimientos:
+
+La aplicación debe permitir al usuario introducir la información en un formulario y que este texto se muestre maquetado automáticamente en un cuadro similar a una tarjeta con información del proyecto.
 
 La tarjeta del proyecto deberá tener los siguientes campos:
 
@@ -55,14 +38,53 @@ La tarjeta del proyecto deberá tener los siguientes campos:
 - Foto del autora/o.
 - Foto del proyecto.
 
-Respecto a la interacción con la web los requerimientos son:
 
-- Los campos deberán tener restricciones para su formato indicado.
+## 🚀 Instalación.
 
-- Las modificaciones que hacemos en el formulario (diseño y contenido), aparecen automáticamente en la vista previa de la tarjeta del proyecto.
+Para poder ejecutar y utilizar este proyecto, sigue los siguientes pasos:
 
-- Toda la información del formulario debe almacenarse en localStorage, de forma que al recargar la página siga disponible.
+1. Clona este repositorio en tu máquina local.
+   ```bash
+   git clone https://github.com/tuusuario/personal-projects-display.git
+   ```
+2. Navega a la carpeta del proyecto.
+   ```bash
+   cd personal-projects-display
+   ```
+3. Instala las dependencias ejecutando el comando `npm install`. Este comando buscará en el archivo `package.json` las dependencias listadas y las descargará en una carpeta llamada `node_modules`.
 
-- Al hacer clic en el botón de "Crear Tarjeta" enviaremos el formulario a un API que devolverá la URL de una web, con la tarjeta de visita con la información rellena.
+4. Inicia la aplicación ejecutando el comando `npm start`.
 
-- Mostraremos esta URL para que el usuario verifique si la tarjeta está bien definida.
+
+## 📦 Despliegue.
+
+La aplicación está configurada para que se pueda desplegar de manera sencilla en GitHub Pages siguiendo los siguientes pasos:
+  1. Asegúrate de que todos los cambios necesarios estén confirmados y guardados en tu repositorio.
+  2. Ejecuta el siguiente comando en tu terminal para generar los archivos necesarios para el despliegue:
+     
+     ```bash
+     npm run docs
+     
+     ```
+  3. Una vez completado, los archivos de construcción se encontrarán en la carpeta `docs`.
+
+
+## 🧰 Herramientas y tecnologías.
+
+Este proyecto ha sido creado utilizando una combinación de herramientas y tecnologías. A continuación, te presento las principales herramientas que he utilizado:
+
+<p align= 'center'>
+<a href="https://www.w3schools.com/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a>
+ <a href="https://sass-lang.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg" alt="sass" width="40" height="40"/> </a> 
+ <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a>
+ <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="60" height="60"/> </a>
+<a href="https://expressjs.com" target="_blank" rel="noreferrer"> <img src="https://github.com/devicons/devicon/blob/master/icons/express/express-original-wordmark.svg" alt="express" width="40" height="40"/>
+<a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="git" width="40" height="40"/> </a>  
+ <a href="https://github.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" width="40" height="40"/> </a>
+ <a href="https://code.visualstudio.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg" alt="vscode" width="40" height="40"/> </a>
+</p>
+
+## 📬 CONTACTO.
+¡Espero que te haya gustado esta aplicación! 💚
+
+Si quieres ver este y otros proyectos los puedes encontrar en mi porfolio: <https://www.maragil.com> 
