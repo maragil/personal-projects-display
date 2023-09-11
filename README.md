@@ -1,12 +1,10 @@
-![Imagen del proyecto](./src/images/logo-adalab.png)
+# [Proyectos Molones](https://personal-projects-display.maragil.com/) 🛸	
 
 ## :robot: Descripción del proyecto.
 
-Este repositorio contiene el proyecto del grupo 5 correspondiente al módulo 3 de la promoción Salas del BootCamp Web Programming de Adalab.
+Esta aplicación web es el resultado del proyecto final grupal correspondiente a los módulos 3 y 4 del Bootcamp de Programación Web de [Adalab](https://adalab.es/).
 
-En este proyecto se pide la realización de una aplicación web que nos permita crear una página para mostrar un proyecto personal o un planteamiento que resulte interesante.
-
-En la página web se podrán introducir datos personales y profesionales, y obtener una vista maquetada con la información.
+Este proyecto tiene como objetivo desarrollar una herramienta web que permita crear una página para mostrar tus proyectos personales o cualquier idea interesante que desees compartir. Podrás ingresar fácilmente tus datos personales y profesionales, y obtendrás una vista maquetada con toda la información.
 
 ## :dart: Objetivos:
 
